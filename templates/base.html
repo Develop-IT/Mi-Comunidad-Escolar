@@ -9,7 +9,63 @@
     {% block css %}{% endblock  %}
   </head>
   <body>
-    {% block content %}{% endblock  %}
+
+    <!-- Sidebar Menu -->
+    <div class="ui vertical inverted sidebar menu">
+    <a class="active item">Inicio</a>
+    <a class="item">Mi Escuela</a>
+    <a class="item">Escuelas</a>
+    <a class="item">Ranking</a>
+    <a class="item">Iniciar Sesión</a>
+    <a class="item">Registrarse</a>
+    </div>
+
+    <div class="pusher">
+      <div class="ui inverted vertical masthead center aligned segment">
+
+        <div class="ui container">
+          <div class="ui large secondary inverted pointing menu">
+            <a class="toc item">
+              <i class="sidebar icon"></i>
+            </a>
+            <a  {% if home_nav %}class="active item"{% else %}class="item"{% endif %}>Inicio</a>
+            <a class="item">Mi Escuela</a>
+            <a class="item">Escuelas</a>
+            {% if home_nav %}
+              <div class="right item">
+                <a class="ui inverted button" href="/users/login">Iniciar Sesión</a>
+                <a class="ui inverted button">Registrarse</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+        {% block in_re %}{% endblock  %}
+      </div>
+      {% block content %}{% endblock  %}
+
+    </div>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // fix menu when passed
+        $('.masthead')
+          .visibility({
+            once: false,
+            onBottomPassed: function() {
+              $('.fixed.menu').transition('fade in');
+            },
+            onBottomPassedReverse: function() {
+              $('.fixed.menu').transition('fade out');
+            }
+          })
+        ;
+        // create sidebar and attach to menu open
+        $('.ui.sidebar')
+          .sidebar('attach events', '.toc.item')
+        ;
+      });
+    </script>
     {% block script %}{% endblock  %}
   </body>
 </html>

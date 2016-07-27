@@ -83,6 +83,9 @@
    }
  }
 
-.ui.inverted.segment, .ui.primary.inverted.segment{
-
-}
+ .ui.inverted.segment, .ui.primary.inverted.segment{
+   background-color: #27ae60;
+ }
+ .ui.secondary.inverted.pointing.menu{
+   border-color: #27ae60;
+ }

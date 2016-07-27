@@ -5,51 +5,20 @@
     <link rel="stylesheet" href="/static/css/home.css" media="screen" title="no title" charset="utf-8">
   {% endblock  %}
 
+
+  {% block in_re %}
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        Bienvenido a Mi Escuela
+      </h1>
+      <h2>Una comunidad para mejorar las escuelas.</h2>
+      <div class="ui huge primary button">Comenzar<i class="right arrow icon"></i></div>
+    </div>
+  {% endblock  %}
+
   {% block content %}
 
-    <!-- Sidebar Menu -->
-    <div class="ui vertical inverted sidebar menu">
-    <a class="active item">Home</a>
-    <a class="item">Work</a>
-    <a class="item">Company</a>
-    <a class="item">Careers</a>
-    <a class="item">Login</a>
-    <a class="item">Signup</a>
-    </div>
-
-
     <!-- Page Contents -->
-    <div class="pusher">
-
-
-    <div class="ui inverted vertical masthead center aligned segment">
-
-      <div class="ui container">
-        <div class="ui large secondary inverted pointing menu">
-          <a class="toc item">
-            <i class="sidebar icon"></i>
-          </a>
-          <a class="active item">Inicio</a>
-          <a class="item">Mi Escuela</a>
-          <a class="item">Escuelas</a>
-          <div class="right item">
-            <a class="ui inverted button">Iniciar Sesión</a>
-            <a class="ui inverted button">Registrarse</a>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="ui text container">
-        <h1 class="ui inverted header">
-          Bienvenido a Mi Escuela
-        </h1>
-        <h2>Una comunidad para mejorar las escuelas.</h2>
-        <div class="ui huge primary button">Comenzar<i class="right arrow icon"></i></div>
-      </div>
-
-    </div>
 
     <div class="ui vertical stripe segment">
       <div class="ui middle aligned stackable grid container">
@@ -59,7 +28,7 @@
             <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
           </div>
           <div class="six wide right floated column">
-            <img src="http://blog.teamtreehouse.com/wp-content/uploads/2013/10/idea-execution.png" class="ui large bordered rounded image">
+            <img src="http://www.advantagecaribbean.com/images/bigstock-Business-Flat-Icon-63601009_2.jpg" class="ui large bordered rounded image">
           </div>
         </div>
         <div class="row">
@@ -98,12 +67,12 @@
             <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
           </div>
           <div class="six wide right floated column">
-            <img src="https://cdn0.iconfinder.com/data/icons/e-commerce-and-shopping-2/512/award_ribbon_medal_badge_label_winner_win_emblem_achievement_quality_first_best_champion_advantage_success_competition_victory_flat_design_icon-512.png" class="ui large bordered rounded image">
+            <img src="http://www.dailyfreepsd.com/wp-content/uploads/2013/07/Free-Flat-Ribbon-Award-Badge-Icon-PSD.png" class="ui large bordered rounded image">
           </div>
         </div>
         <div class="row">
           <div class="center aligned column">
-            <a class="ui huge button"></a>
+            <a class="ui huge button">Ir a Rankings</a>
           </div>
         </div>
       </div>
@@ -141,28 +110,4 @@
         </div>
       </div>
     </div>
-    </div>
-  {% endblock  %}
-
-  {% block script %}
-  <script type="text/javascript">
-    $(document).ready(function() {
-      // fix menu when passed
-      $('.masthead')
-        .visibility({
-          once: false,
-          onBottomPassed: function() {
-            $('.fixed.menu').transition('fade in');
-          },
-          onBottomPassedReverse: function() {
-            $('.fixed.menu').transition('fade out');
-          }
-        })
-      ;
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-    });
-  </script>
   {% endblock  %}
